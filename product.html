@@ -22,19 +22,44 @@
     </style>
 
     <!--responsive navbar-->
-    <div class="flex items-center justify-between bg-green-100 shadow-xl sticky top-0 z-10">
-        <h1 class="p-4 text-2xl text-green-900">GREENDEN</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-6 h-6 mr-4 md:hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
+    <nav class="bg-green-100 shadow-xl sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <h1 class="p-4 text-2xl text-green-900">GREENDEN</h1>
 
-        <ul class="flex gap-5 cursor-pointer hidden md:flex">
-            <li class="text-gray-600 hover:underline hover:text-black"><a href="./index.html">Home</a></li>
-            <li class="text-gray-600 hover:underline hover:text-black"><a href="./product.html">Product</a></li>
-            <li class="text-gray-600 hover:underline hover:text-black mr-5"><a href="./contact.html">Contact</a></li>
+            <!-- Hamburger button (mobile only) -->
+            <button id="menu-btn" class="mr-4 md:hidden focus:outline-none" aria-label="Toggle menu"
+                aria-expanded="false">
+                <!-- hamburger icon -->
+                <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!-- close icon -->
+                <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="h-6 w-6 hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Desktop menu -->
+            <ul class="hidden md:flex gap-5 cursor-pointer">
+                <li class="text-gray-600 hover:underline hover:text-black"><a href="./index.html">Home</a></li>
+                <li class="text-gray-600 hover:underline hover:text-black"><a href="./product.html">Product</a></li>
+                <li class="text-gray-600 hover:underline hover:text-black mr-5"><a href="./contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mobile menu (hidden by default) -->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col bg-green-100 border-t border-green-200">
+            <li class="border-b border-green-200"><a href="./index.html"
+                    class="block px-4 py-3 text-gray-700 hover:bg-green-200">Home</a></li>
+            <li class="border-b border-green-200"><a href="./product.html"
+                    class="block px-4 py-3 text-gray-700 hover:bg-green-200">Product</a></li>
+            <li><a href="./contact.html" class="block px-4 py-3 text-gray-700 hover:bg-green-200">Contact</a></li>
         </ul>
-    </div>
+    </nav>
 
     <!--our products-->
     <div>
@@ -131,4 +156,28 @@
             <p>&copy; 2023 Greenden Floral Delights. All rights reserved.</p>
         </div>
     </footer>
+<script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenu.classList.toggle('flex', open);
+            iconOpen.classList.toggle('hidden', open);
+            iconClose.classList.toggle('hidden', !open);
+            menuBtn.setAttribute('aria-expanded', open);
+        }
+
+        menuBtn.addEventListener('click', () => {
+            setMenu(mobileMenu.classList.contains('hidden'));
+        });
+
+        // Close the menu if the screen is resized to desktop width
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) setMenu(false);
+        });
+    </script>
+    
 </body>
