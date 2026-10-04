@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products — Greenden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { moss: '#4a5340', deep: '#3d4535', cream: '#e9dfd0', clay: '#a24f32', stone: '#a79d90', white: '#FFFFFF' },
+                    fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['Jost', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-sans text-moss antialiased">
+
+    <!-- HEADER -->
+    <header class="fixed inset-x-0 top-0 z-[9999] bg-cream text-moss md:bg-moss md:text-cream">
+        <div class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
+            <a href="index.html" class="font-serif text-[26px] font-light tracking-[0.28em]">GREENDEN</a>
+
+            <!-- Desktop nav -->
+            <nav class="absolute left-1/2 hidden -translate-x-1/2 gap-12 text-[11px] uppercase tracking-[0.18em] md:flex"
+                aria-label="Main">
+                <a href="index .html" class="border-b border-transparent pb-1">Home</a>
+                <a href="product.html" class="border-b border-cream pb-1">Products</a>
+                <a href="contact.html" class="border-b border-transparent pb-1">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-5">
+                <!-- Cart icon -->
+                <a href="#" class="grid h-10 w-10 place-items-center" aria-label="Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h2.5l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.1L20.5 8H5.6" />
+                        <circle cx="9.5" cy="20" r="1.3" />
+                        <circle cx="17" cy="20" r="1.3" />
+                    </svg>
+                </a>
+
+                <!-- Mobile menu (no JavaScript: <details>) -->
+                <details class="group relative md:hidden">
+                    <summary
+                        class="cursor-pointer list-none text-[11px] uppercase tracking-[0.18em] [&::-webkit-details-marker]:hidden">
+                        <span class="group-open:hidden">Menu</span>
+                        <span class="hidden group-open:inline">Close</span>
+                    </summary>
+                    <nav class="absolute right-0 top-10 w-52 bg-cream py-3 text-sm uppercase tracking-[0.18em] shadow-lg"
+                        aria-label="Mobile">
+                        <a href="index .html" class="block px-5 py-3">Home</a>
+
+                        <a href="contact.html" class="block px-5 py-3">Contact</a>
+                    </nav>
+                </details>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE TITLE -->
+    <section class="bg-white px-6 pb-14 pt-32 text-moss md:px-12 md:pb-16 md:pt-40">
+        <div class="mx-auto flex max-w-[1400px] flex-col items-center gap-10 lg:flex-row lg:gap-16">
+
+            
+            <div
+                class="relative h-[200px] w-[500px] max-w-full shrink-0 overflow-hidden rounded-xl bg-[#8a9576] lg:ml-[200px]">
+                <img src="./images/product.jpg" alt="Terrariums arranged on a shelf" loading="lazy"
+                    class="absolute inset-0 h-full w-full object-cover" onerror="this.remove()">
+            </div>
+
+            <!-- Right: title -->
+            <div class="flex gap-8 md:gap-10">
+                <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                <div>
+                    <h1 class="font-serif text-5xl font-light leading-[1.02] md:text-7xl">All<br>Terrariums</h1>
+                    <p class="mt-5 max-w-[360px] text-[17px] font-light leading-snug text-moss/85">
+                        Small worlds in glass and cast concrete, planted by hand and ready to place.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <main class="px-6 pb-20 md:px-12 md:pb-28">
+        <div class="mx-auto max-w-[1400px]">
+
+
+            <div
+                class="flex flex-col gap-5 border-b border-moss/45 pb-6 lg:flex-row lg:items-center lg:justify-between">
+            </div>
+            <p id="count" class="mt-5 text-sm font-light text-moss/70">8 products</p>
+            <div id="grid" class="mt-8 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
+
+                <!-- 1 -->
+                <article class="group" data-cat="Terrariums" data-name="Moss Cylinder"
+                    data-note="Moss, stone and driftwood" data-price="1800">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#a24f32]">
+                        <img src="./images/p (5).jpeg" alt="Moss Cylinder" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Terrariums</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Moss Cylinder</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Moss, stone and driftwood
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹1,800</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="group" data-cat="Terrariums" data-name="Driftwood Bell"
+                    data-note="Bell jar on a concrete base" data-price="2400">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#a79d90]">
+                        <img src="./images/p (6).jpeg" alt="Driftwood Bell" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Terrariums</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Driftwood Bell</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Bell jar on a concrete base
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹2,400</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="group" data-cat="Ferns" data-name="Fern Dome" data-note="Tropical fern, low light"
+                    data-price="2900">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#6b7a58]">
+                        <img src="./images/p (7).jpeg" alt="Fern Dome" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Ferns</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Fern Dome</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Tropical fern, low light
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹2,900</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="group" data-cat="Succulents" data-name="Pebble Garden"
+                    data-note="Succulents and river stones" data-price="1500">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#8a5a43]">
+                        <img src="./images/p (8).jpeg" alt="Pebble Garden" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Succulents</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Pebble Garden</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Succulents and river stones
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹1,500</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="group" data-cat="Gifts" data-name="Mini Moss Jar" data-note="Pocket-sized, gift boxed"
+                    data-price="900">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#7d8f55]">
+                        <img src="./images/p (9).jpeg" alt="Mini Moss Jar" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Gifts</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Mini Moss Jar</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Pocket-sized, gift boxed
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹900</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="group" data-cat="Succulents" data-name="Cactus Cube"
+                    data-note="Three cacti in a glass cube" data-price="1300">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#a24f32]">
+                        <img src="./images/p (10).jpeg" alt="Cactus Cube" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Succulents</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Cactus Cube</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Three cacti in a glass cube
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹1,300</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="group" data-cat="Terrariums" data-name="Forest Floor" data-note="Layered moss and bark"
+                    data-price="3200">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#6b7a58]">
+                        <img src="./images/p (11).jpeg" alt="Forest Floor" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Terrariums</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Forest Floor</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Layered moss and bark</p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹3,200</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="group" data-cat="Ferns" data-name="Maidenhair Bowl"
+                    data-note="Soft fronds, bright shade" data-price="2100">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#8a9576]">
+                        <img src="./images/p (12).jpeg" alt="Maidenhair Bowl" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Ferns</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Maidenhair Bowl</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Soft fronds, bright shade
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹2,100</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="group" data-cat="Gifts" data-name="Mini Moss Jar" data-note="Pocket-sized, gift boxed"
+                    data-price="900">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#7d8f55]">
+                        <img src="./images/p (13).jpeg" alt="Mini Moss Jar" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Gifts</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Mini Moss Jar</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Pocket-sized, gift boxed
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹900</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="group" data-cat="Succulents" data-name="Cactus Cube"
+                    data-note="Three cacti in a glass cube" data-price="1300">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#a24f32]">
+                        <img src="./images/p (14).jpeg" alt="Cactus Cube" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Succulents</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Cactus Cube</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Three cacti in a glass cube
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹1,300</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="group" data-cat="Terrariums" data-name="Forest Floor" data-note="Layered moss and bark"
+                    data-price="3200">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#6b7a58]">
+                        <img src="./images/p (15).jpeg" alt="Forest Floor" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Terrariums</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Forest Floor</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Layered moss and bark</p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹3,200</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="group" data-cat="Ferns" data-name="Maidenhair Bowl"
+                    data-note="Soft fronds, bright shade" data-price="2100">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#8a9576]">
+                        <img src="./images/p (16).jpeg" alt="Maidenhair Bowl" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            onerror="this.remove()">
+                        <span
+                            class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-moss">Ferns</span>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                        <div class="flex-1">
+                            <h3 class="font-serif text-2xl font-light leading-none">Maidenhair Bowl</h3>
+                            <p class="mt-2 text-[14px] font-light leading-snug text-moss/70">Soft fronds, bright shade
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-lg font-light tracking-wide">₹2,100</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-deep px-6 pt-14 text-cream md:px-12">
+        <div class="mx-auto max-w-[1400px]">
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+                <div>
+                    <a href="index.html" class="font-serif text-3xl font-light tracking-[0.2em]">GREENDEN</a>
+                    <p class="mt-4 max-w-[320px] text-[15px] font-light leading-relaxed text-cream/75">
+                        Hand-planted terrariums and indoor greens, grown with care and delivered fresh.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="font-serif text-2xl font-normal">Company</h2>
+                    <ul class="mt-4 space-y-3 text-[15px] font-light text-cream/75">
+                        <li><a href="index .html" class="transition hover:text-white">Home</a></li>
+                        <li><a href="products.html" class="transition hover:text-white">Products</a></li>
+                        <li><a href="contact.html" class="transition hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-serif text-2xl font-normal">Follow us</h2>
+                    <ul class="mt-4 space-y-3 text-[15px] font-light text-cream/75">
+                        <li><a href="#" class="transition hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="transition hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="transition hover:text-white">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-serif text-2xl font-normal">Reach us</h2>
+                    <ul class="mt-4 space-y-3 text-[15px] font-light text-cream/75">
+                        <li>+91 98765 43210</li>
+                        <li>hello@greenden.com</li>
+                        <li>Chennai, Tamil Nadu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-cream/20 py-6 text-[14px] font-light text-cream/75 md:flex-row">
+                <p>© 2026 Greenden. All rights reserved.</p>
+                <a href="#" class="transition hover:text-white">Back to top</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const nav = document.getElementById('nav');
+        function onScroll() {
+            nav.classList.toggle('md:bg-moss/90', scrollY > 40);
+            nav.classList.toggle('md:backdrop-blur', scrollY > 40);
+        }
+        addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    </script>
+
+</body>
+
+</html>
