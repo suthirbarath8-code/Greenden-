@@ -2,133 +2,231 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Greenden Contact</title>
-   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Greenden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { moss: '#4a5340', deep: '#3d4535', cream: '#e9dfd0', clay: '#a24f32', stone: '#a79d90' },
+                    fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['Jost', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
-<body>
-   <style>
-      body {
-         font-family: 'Poppins', sans-serif;
-      }
-   </style>
+<body class="bg-white font-sans text-moss antialiased">
 
-   <!--responsive navbar-->
-   <nav class="bg-green-100 shadow-xl sticky top-0 z-10">
-        <div class="flex items-center justify-between">
-            <h1 class="p-4 text-2xl text-green-900">GREENDEN</h1>
+    <!-- HEADER -->
+    <header class="fixed inset-x-0 top-0 z-[9999] bg-cream text-moss md:bg-moss md:text-cream">
+        <div class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
+            <a href="index.html" class="font-serif text-[26px] font-light tracking-[0.28em]">GREENDEN</a>
 
-            <!-- Hamburger button (mobile only) -->
-            <button id="menu-btn" class="mr-4 md:hidden focus:outline-none" aria-label="Toggle menu"
-                aria-expanded="false">
-                <!-- hamburger icon -->
-                <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <!-- close icon -->
-                <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" class="h-6 w-6 hidden">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+            <!-- Desktop nav -->
+            <nav class="absolute left-1/2 hidden -translate-x-1/2 gap-12 text-[11px] uppercase tracking-[0.18em] md:flex"
+                aria-label="Main">
+                <a href="index .html" class="border-b border-transparent pb-1">Home</a>
+                <a href="product.html" class="border-b border-transparent pb-1">Products</a>
+                <a href="contact.html" class="border-b border-cream pb-1">Contact</a>
+            </nav>
 
-            <!-- Desktop menu -->
-            <ul class="hidden md:flex gap-5 cursor-pointer">
-                <li class="text-gray-600 hover:underline hover:text-black"><a href="./index.html">Home</a></li>
-                <li class="text-gray-600 hover:underline hover:text-black"><a href="./product.html">Product</a></li>
-                <li class="text-gray-600 hover:underline hover:text-black mr-5"><a href="./contact.html">Contact</a>
-                </li>
-            </ul>
+            <!-- Mobile menu (no JavaScript: <details>) -->
+            <details class="group relative md:hidden">
+                <summary
+                    class="cursor-pointer list-none text-[11px] uppercase tracking-[0.18em] [&::-webkit-details-marker]:hidden">
+                    <span class="group-open:hidden">Menu</span>
+                    <span class="hidden group-open:inline">Close</span>
+                </summary>
+                <nav class="absolute right-0 top-10 w-52 bg-cream py-3 text-sm uppercase tracking-[0.18em] shadow-lg"
+                    aria-label="Mobile">
+                    <a href="index .html" class="block px-5 py-3">Home</a>
+                    <a href="product.html" class="block px-5 py-3">Products</a>
+                    
+                </nav>
+            </details>
         </div>
 
-        <!-- Mobile menu (hidden by default) -->
-        <ul id="mobile-menu" class="hidden md:hidden flex-col bg-green-100 border-t border-green-200">
-            <li class="border-b border-green-200"><a href="./index.html"
-                    class="block px-4 py-3 text-gray-700 hover:bg-green-200">Home</a></li>
-            <li class="border-b border-green-200"><a href="./product.html"
-                    class="block px-4 py-3 text-gray-700 hover:bg-green-200">Product</a></li>
-            <li><a href="./contact.html" class="block px-4 py-3 text-gray-700 hover:bg-green-200">Contact</a></li>
-        </ul>
-    </nav>
+    </header>
 
-   <!--contact section-->
-   <section class="bg-white dark:bg-gray-900">
-      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us
-         </h2>
-         <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical
-            issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
-         <form action="#" class="space-y-8">
-            <div>
-               <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                  email</label>
-               <input type="email" id="email"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="name@flowbite.com" required>
+    <!-- CONTACT -->
+    <main class="bg-[#f6f1e8] px-6 pb-20 pt-32 md:px-12 md:pb-28 md:pt-40">
+        <div class="mx-auto max-w-[1200px]">
+
+            <!-- Heading -->
+            <div class="flex gap-8 md:gap-10">
+                <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
+                <div>
+                    <h1 class="font-serif text-5xl font-light leading-[1.02] md:text-7xl">Let’s talk<br>plants</h1>
+                    <p class="mt-5 max-w-[420px] text-[17px] font-light leading-snug text-moss/80">
+                        Questions about a terrarium, an order or a custom piece? Write to us and we will reply within
+                        one working day.
+                    </p>
+                </div>
             </div>
-            <div>
-               <label for="subject"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-               <input type="text" id="subject"
-                  class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                  placeholder="Let us know how we can help you" required>
+
+            <div class="mt-14 flex flex-col gap-12 lg:flex-row lg:gap-16">
+
+               
+                <div class="w-full lg:w-[42%]">
+                    <div class="relative h-[340px] overflow-hidden rounded-xl bg-[#8a9576] lg:h-[460px]">
+                        <img src="./images/WhatsApp Image 2026-10-04 at 4.00.05 PM.jpeg" alt="Caring for a terrarium at home" loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover" onerror="this.remove()">
+                    </div>
+
+                    <dl class="mt-8 space-y-5 text-[16px] font-light">
+                        <div class="flex gap-5 border-b border-moss/15 pb-5">
+                            <dt class="w-24 shrink-0 text-[11px] uppercase tracking-[0.18em] text-moss/60">Email</dt>
+                            <dd>hello@greenden.com</dd>
+                        </div>
+                        <div class="flex gap-5 border-b border-moss/15 pb-5">
+                            <dt class="w-24 shrink-0 text-[11px] uppercase tracking-[0.18em] text-moss/60">Phone</dt>
+                            <dd>+91 98765 43210</dd>
+                        </div>
+                        <div class="flex gap-5 border-b border-moss/15 pb-5">
+                            <dt class="w-24 shrink-0 text-[11px] uppercase tracking-[0.18em] text-moss/60">Studio</dt>
+                            <dd>12 Garden Lane, Chennai,<br>Tamil Nadu</dd>
+                        </div>
+                        <div class="flex gap-5">
+                            <dt class="w-24 shrink-0 text-[11px] uppercase tracking-[0.18em] text-moss/60">Hours</dt>
+                            <dd>Monday to Saturday<br>9 am to 6 pm</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Right: form (native HTML only) -->
+                <form action="mailto:hello@greenden.com" method="post" enctype="text/plain"
+                    class="grid flex-1 content-start gap-x-6 gap-y-6 sm:grid-cols-2">
+
+                    <label class="block">
+                        <span class="text-[13px] font-normal">First name <span class="text-clay">*</span></span>
+                        <input type="text" name="first_name" required placeholder="Ex. Raj"
+                            class="mt-2 w-full rounded-full border border-moss/25 bg-white px-5 py-3.5 text-[16px] placeholder:text-moss/40 focus:border-moss focus:outline-none">
+                    </label>
+
+                    <label class="block">
+                        <span class="text-[13px] font-normal">Last name</span>
+                        <input type="text" name="last_name" placeholder="Ex. Kumar"
+                            class="mt-2 w-full rounded-full border border-moss/25 bg-white px-5 py-3.5 text-[16px] placeholder:text-moss/40 focus:border-moss focus:outline-none">
+                    </label>
+
+                    <label class="block">
+                        <span class="text-[13px] font-normal">Email <span class="text-clay">*</span></span>
+                        <input type="email" name="email" required placeholder="you@example.com"
+                            class="mt-2 w-full rounded-full border border-moss/25 bg-white px-5 py-3.5 text-[16px] placeholder:text-moss/40 focus:border-moss focus:outline-none">
+                    </label>
+
+                    <label class="block">
+                        <span class="text-[13px] font-normal">Phone <span class="text-clay">*</span></span>
+                        <input type="tel" name="phone" required placeholder="+91 98765 43210"
+                            class="mt-2 w-full rounded-full border border-moss/25 bg-white px-5 py-3.5 text-[16px] placeholder:text-moss/40 focus:border-moss focus:outline-none">
+                    </label>
+
+                    <label class="block sm:col-span-2">
+                        <span class="text-[13px] font-normal">Subject <span class="text-clay">*</span></span>
+                        <input type="text" name="subject" required placeholder="Tell us your queries"
+                            class="mt-2 w-full rounded-full border border-moss/25 bg-white px-5 py-3.5 text-[16px] placeholder:text-moss/40 focus:border-moss focus:outline-none">
+                    </label>
+
+                    <label class="block sm:col-span-2">
+                        <span class="text-[13px] font-normal">Your message <span class="text-clay">*</span></span>
+                        <textarea name="message" required rows="6" placeholder="Tell us how we can help"
+                            class="mt-2 w-full resize-none rounded-2xl border border-moss/25 bg-white px-5 py-4 text-[16px] placeholder:text-moss/40 focus:border-moss focus:outline-none"></textarea>
+                    </label>
+
+                    <div class="sm:col-span-2">
+                        <button type="submit"
+                            class="rounded-full bg-moss px-8 py-3.5 text-[11px] uppercase tracking-[0.2em] text-cream transition hover:bg-clay focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss">
+                            Send message
+                        </button>
+                        
+                    </div>
+                </form>
             </div>
-            <div class="sm:col-span-2">
-               <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
-                  message</label>
-               <textarea id="message" rows="6"
-                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="Leave a comment..."></textarea>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-deep px-6 pt-14 text-cream md:px-12">
+        <div class="mx-auto max-w-[1400px]">
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+                <div>
+                    <a href="index.html" class="font-serif text-3xl font-light tracking-[0.2em]">GREENDEN</a>
+                    <p class="mt-4 max-w-[320px] text-[15px] font-light leading-relaxed text-cream/75">
+                        Hand-planted terrariums and indoor greens, grown with care and delivered fresh.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="font-serif text-2xl font-normal">Company</h2>
+                    <ul class="mt-4 space-y-3 text-[15px] font-light text-cream/75">
+                        <li><a href="index .html" class="transition hover:text-white">Home</a></li>
+                        <li><a href="product.html" class="transition hover:text-white">Products</a></li>
+                        <li><a href="contact.html" class="transition hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-serif text-2xl font-normal">Follow us</h2>
+                    <ul class="mt-4 space-y-3 text-[15px] font-light text-cream/75">
+                        <li><a href="#" class="transition hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="transition hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="transition hover:text-white">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-serif text-2xl font-normal">Reach us</h2>
+                    <ul class="mt-4 space-y-3 text-[15px] font-light text-cream/75">
+                        <li>+91 98765 43210</li>
+                        <li>hello@greenden.com</li>
+                        <li>Chennai, Tamil Nadu</li>
+                    </ul>
+                </div>
             </div>
-            <button type="submit"
-               class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
-               message</button>
-         </form>
-      </div>
-   </section>
 
-   <!--footer-->
-   <footer class="bg-green-100 text-white p-10">
-      <div class="container mx-auto px-4 text-black ">
-         <h1 class="text-4xl font-bold mb-3">Greenden</h1>
-         <p class="mb-2">The Standard chunk of lorem ipsum used since the 1500s is represented below for those interest
-         </p>
-         <p>&copy; 2023 Greenden Floral Delights. All rights reserved.</p>
-      </div>
-   </footer>
+            <div
+                class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-cream/20 py-6 text-[14px] font-light text-cream/75 md:flex-row">
+                <p>© 2026 Greenden. All rights reserved.</p>
+                <a href="#" class="transition hover:text-white">Back to top</a>
+            </div>
+        </div>
+    </footer>
 
-   <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('icon-open');
-        const iconClose = document.getElementById('icon-close');
-
-        function setMenu(open) {
-            mobileMenu.classList.toggle('hidden', !open);
-            mobileMenu.classList.toggle('flex', open);
-            iconOpen.classList.toggle('hidden', open);
-            iconClose.classList.toggle('hidden', !open);
-            menuBtn.setAttribute('aria-expanded', open);
-        }
-
+    <script>
+        // ---- Mobile menu ----
+        const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
-            setMenu(mobileMenu.classList.contains('hidden'));
+            const open = menu.classList.toggle('hidden') === false;
+            menuBtn.setAttribute('aria-expanded', open);
         });
+        menu.addEventListener('click', e => { if (e.target.tagName === 'A') menu.classList.add('hidden'); });
 
-        // Close the menu if the screen is resized to desktop width
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) setMenu(false);
-        });
+        // ---- Active nav link on scroll + header background (desktop only) ----
+        const links = [...document.querySelectorAll('[data-link]')];
+        const sections = links.map(l => document.querySelector(l.getAttribute('href')));
+        const nav = document.getElementById('nav');
+        function onScroll() {
+            nav.classList.toggle('md:bg-moss/90', scrollY > 40);
+            nav.classList.toggle('md:backdrop-blur', scrollY > 40);
+            let current = 0;
+            sections.forEach((s, i) => { if (s.getBoundingClientRect().top <= innerHeight * 0.4) current = i; });
+            links.forEach((l, i) => l.classList.toggle('border-cream', i === current));
+        }
+        addEventListener('scroll', onScroll, { passive: true }); onScroll();
     </script>
-</body>   
-   
+
+</body>
+
+</html>
