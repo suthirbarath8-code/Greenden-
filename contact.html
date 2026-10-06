@@ -33,7 +33,7 @@
         <div class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
             <a href="index.html" class="font-serif text-[26px] font-light tracking-[0.28em]">GREENDEN</a>
 
-            <!-- Desktop nav -->
+            
             <nav class="absolute left-1/2 hidden -translate-x-1/2 gap-12 text-[11px] uppercase tracking-[0.18em] md:flex"
                 aria-label="Main">
                 <a href="index.html" class="border-b border-transparent pb-1">Home</a>
@@ -41,7 +41,7 @@
                 <a href="contact.html" class="border-b border-cream pb-1">Contact</a>
             </nav>
 
-            <!-- Mobile menu (no JavaScript: <details>) -->
+            
             <details class="group relative md:hidden">
                 <summary
                     class="cursor-pointer list-none text-[11px] uppercase tracking-[0.18em] [&::-webkit-details-marker]:hidden">
@@ -63,7 +63,7 @@
     <main class="bg-[#f6f1e8] px-6 pb-20 pt-32 md:px-12 md:pb-28 md:pt-40">
         <div class="mx-auto max-w-[1200px]">
 
-            <!-- Heading -->
+            
             <div class="flex gap-8 md:gap-10">
                 <span class="w-px self-stretch bg-clay/70" aria-hidden="true"></span>
                 <div>
@@ -104,7 +104,7 @@
                     </dl>
                 </div>
 
-                <!-- Right: form (native HTML only) -->
+                
                 <form action="mailto:hello@greenden.com" method="post" enctype="text/plain"
                     class="grid flex-1 content-start gap-x-6 gap-y-6 sm:grid-cols-2">
 
@@ -205,7 +205,7 @@
     </footer>
 
     <script>
-        // ---- Mobile menu ----
+      
         const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
             const open = menu.classList.toggle('hidden') === false;
@@ -213,7 +213,7 @@
         });
         menu.addEventListener('click', e => { if (e.target.tagName === 'A') menu.classList.add('hidden'); });
 
-        // ---- Active nav link on scroll + header background (desktop only) ----
+        
         const links = [...document.querySelectorAll('[data-link]')];
         const sections = links.map(l => document.querySelector(l.getAttribute('href')));
         const nav = document.getElementById('nav');
